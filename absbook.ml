@@ -19,7 +19,7 @@ let id x = x ;;
 
 (* const x -- Returns the constant function returning `x`. *)
 
-let const x _ = x
+let const x _ = x ;;
   
 (* reduce f list -- Applies `f` to the elements of `list`
    left-to-right (as in `List.fold_left`) using first element of
