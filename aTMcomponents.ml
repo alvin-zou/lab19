@@ -71,7 +71,9 @@ let rec update_balance (i : id) (amt : int) : unit =
     if act.id = i 
     then { name = act.name; id = act.id; balance = amt }
     else act in
-  database := (List.map helper !database)
+  if (List.map helper !database) = !database
+  then raise Not_found
+  else database := (List.map helper !database)
   
   (*....................................................................
     Presenting information and cash to the customer
